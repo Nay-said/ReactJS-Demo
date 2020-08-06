@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Todos from './components/Todos'
+import Header from './components/layout/header'
+import Todos from './components/Todos';
 
 class App extends Component {
   state = {
@@ -34,17 +35,23 @@ class App extends Component {
   }
 
   del = (id) => {
-    console.log(id)
+    this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)] })
   }
 
   render() {
     return (
-      <div className="App">
-        <h1>React Js Demo App</h1>
+      <div className="App" style={app}>
+        <Header />
         <Todos todos = { this.state.todos } mark={this.mark} del={this.del} />
       </div>
     );
   }
+}
+
+const app = {
+  width: '50%',
+  margin: '0 auto',
+  marginTop: '20px'
 }
 
 export default App;
