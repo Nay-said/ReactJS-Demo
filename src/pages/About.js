@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div style={{ textAlign: 'center' }}>
       <br/>
-      <h3>About This App</h3><br/><br/>
+      <h3>About This App</h3><hr/><br/>
 
       <p>Personal React JS Pratice Project -- Hengyu Shi</p><br/>
 

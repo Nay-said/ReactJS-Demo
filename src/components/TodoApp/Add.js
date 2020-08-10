@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Button } from 'react-bootstrap';
+import Form from 'react-bootstrap/Form';
 
 export class Add extends Component {
   state = {
@@ -16,8 +18,8 @@ export class Add extends Component {
   render() {
     return (
      <form onSubmit={this.onSubmit} style={{ display: 'flex', height: '36px', margin: '20px auto 30px auto' }}>
-       <input type="text" name="title" value={this.state.title} onChange={this.onChange} placeholder="Add a to do item" style={{flex: '10', pading: '10px'}} />
-       <input type="submit" value="+ Add" className="button" style={{flex: '1', background: '#555', color: 'white'}} />
+       <Form.Control type="text" name="title" value={this.state.title} onChange={this.onChange} placeholder="Add a to do item" style={{flex: '10', pading: '10px'}} />
+       <Button variant="info" type="submit" className="ml-2" style={{flex: '1'}}>+ Add </Button>
      </form>
     )
   }
